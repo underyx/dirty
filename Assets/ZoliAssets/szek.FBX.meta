@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: d861ad2d222e74371a566948ba60abec
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: asztal
+    100002: barpult
+    100004: barszek
+    100006: barszekreny
+    100008: felmoso
+    100010: karton
+    100012: kulcs
+    100014: paca
+    100016: patkany
+    100018: sepru
+    100020: //RootNode
+    100022: szek
+    100024: telefon
+    100026: tuz
+    400000: asztal
+    400002: barpult
+    400004: barszek
+    400006: barszekreny
+    400008: felmoso
+    400010: karton
+    400012: kulcs
+    400014: paca
+    400016: patkany
+    400018: sepru
+    400020: szek
+    400022: //RootNode
+    400024: telefon
+    400026: tuz
+    2300000: asztal
+    2300002: barpult
+    2300004: barszek
+    2300006: barszekreny
+    2300008: felmoso
+    2300010: karton
+    2300012: kulcs
+    2300014: paca
+    2300016: patkany
+    2300018: sepru
+    2300020: szek
+    2300022: telefon
+    2300024: tuz
+    2300026: //RootNode
+    3300000: asztal
+    3300002: barpult
+    3300004: barszek
+    3300006: barszekreny
+    3300008: felmoso
+    3300010: karton
+    3300012: kulcs
+    3300014: paca
+    3300016: patkany
+    3300018: sepru
+    3300020: szek
+    3300022: telefon
+    3300024: tuz
+    3300026: //RootNode
+    4300000: asztal
+    4300002: szek
+    4300004: barszek
+    4300006: telefon
+    4300008: barpult
+    4300010: barszekreny
+    4300012: paca
+    4300014: karton
+    4300016: kulcs
+    4300018: felmoso
+    4300020: sepru
+    4300022: tuz
+    4300024: patkany
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
