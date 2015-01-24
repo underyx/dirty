@@ -1,77 +1,13 @@
 fileFormatVersion: 2
-guid: f76dd578c04784d438092072da550aa0
+guid: 8a3b69b8dbe28f440b8309eda733d1b8
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: asztal
-    100002: barpult
-    100004: barszek
-    100006: barszekreny
-    100008: //RootNode
-    100010: felmoso
-    100012: karton
-    100014: kulcs
-    100016: paca
-    100018: patkany
-    100020: sepru
-    100022: szek
-    100024: telefon
-    100026: tuz
-    400000: asztal
-    400002: barpult
-    400004: barszek
-    400006: //RootNode
-    400008: barszekreny
-    400010: felmoso
-    400012: karton
-    400014: kulcs
-    400016: paca
-    400018: patkany
-    400020: sepru
-    400022: szek
-    400024: telefon
-    400026: tuz
-    2300000: asztal
-    2300002: barpult
-    2300004: barszek
-    2300006: barszekreny
-    2300008: felmoso
-    2300010: karton
-    2300012: kulcs
-    2300014: paca
-    2300016: patkany
-    2300018: sepru
-    2300020: szek
-    2300022: telefon
-    2300024: tuz
-    2300026: //RootNode
-    3300000: asztal
-    3300002: barpult
-    3300004: barszek
-    3300006: barszekreny
-    3300008: felmoso
-    3300010: karton
-    3300012: kulcs
-    3300014: paca
-    3300016: patkany
-    3300018: sepru
-    3300020: szek
-    3300022: telefon
-    3300024: tuz
-    3300026: //RootNode
-    4300000: asztal
-    4300002: szek
-    4300004: barszek
-    4300006: telefon
-    4300008: barpult
-    4300010: barszekreny
-    4300012: paca
-    4300014: karton
-    4300016: kulcs
-    4300018: felmoso
-    4300020: sepru
-    4300022: tuz
-    4300024: patkany
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: barszekreny
     9500000: //RootNode
   materials:
     importMaterials: 1
