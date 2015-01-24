@@ -4,18 +4,18 @@ using System.Collections;
 public class DoorOpener : MonoBehaviour
 {
 
-    private Door door;
+    private DoorController _doorController;
 	// Use this for initialization
 	void Start ()
 	{
-	    door = GetComponent<Door>();
+	    _doorController = GetComponent<DoorController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	    if(Input.GetKeyDown(KeyCode.Space))
 	    {
-	        door.Open = !door.Open;
+	        _doorController.Open = !_doorController.Open;
 	    }
 	}
 }

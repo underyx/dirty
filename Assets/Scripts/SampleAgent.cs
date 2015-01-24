@@ -12,6 +12,7 @@ public class SampleAgent : MonoBehaviour
 	void Start () {
         mainCamera = Camera.main;
 	    agent = this.GetComponent<NavMeshAgent>();
+	    agent.autoTraverseOffMeshLink = false;
 	}
 
     private Vector3 clickPos;
@@ -31,6 +32,8 @@ public class SampleAgent : MonoBehaviour
                 agent.SetDestination(clickPos);
             }
 	    }
+
+
 	}
 
     public void OnDrawGizmos()
