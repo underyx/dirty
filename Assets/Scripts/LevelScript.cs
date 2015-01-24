@@ -11,9 +11,9 @@ public class LevelScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -50,7 +50,7 @@ public class LevelScript : MonoBehaviour {
                     for (int i = 0; i < highlightTypes.Length; i++)
                     {
                         string highlightType = highlightTypes[i];
-                        if (objects[j].GetComponent<droptarget>().dropType.Equals(highlightType)) {
+                        if (objects[j].GetComponent<DropTarget>().dropType.Equals(highlightType)) {
                             objects[j].renderer.material.color = Color.red;
                         }
                     }
@@ -66,7 +66,7 @@ public class LevelScript : MonoBehaviour {
         {
             if (rayhit && hit.collider.CompareTag("DropTarget"))
             {
-                hit.collider.GetComponent<droptarget>().Drop(grabobject);
+                hit.collider.GetComponent<DropTarget>().Drop(grabobject);
             }
 
             string[] highlightTypes = grabobject.GetComponent<Draggable>().highlightTypes.Split(',');
@@ -77,7 +77,7 @@ public class LevelScript : MonoBehaviour {
                 for (int i = 0; i < highlightTypes.Length; i++)
                 {
                     string highlightType = highlightTypes[i];
-                    if (objects[j].GetComponent<droptarget>().dropType.Equals(highlightType))
+                    if (objects[j].GetComponent<DropTarget>().dropType.Equals(highlightType))
                     {
                         objects[j].renderer.material.color = originalcolor;
                     }

@@ -50,7 +50,7 @@ public class Door : MonoBehaviour
             link.activated = value;
             /*if (value)
             {
-                doorAnimator.Play("DoorOpen");               
+                doorAnimator.Play("DoorOpen");
             }
             else
             {
