@@ -10,7 +10,7 @@ public class droptarget : DropTarget {
 
     }
 
-    public void Drop(Collider dragObject) {
+    public override void Drop(Collider dragObject) {
         if (dragObject.GetComponent<Draggable>().dropType == "key")
         {
             Debug.Log("key dropped on door!");
