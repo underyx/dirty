@@ -6,12 +6,14 @@ using System.Runtime.CompilerServices;
 public class Region : MonoBehaviour
 {
 
-    public List<Door> doors;
+    public List<DoorController> doors;
     private NavMeshPath path;
 
     public bool InRegion(Transform target)
     {
-        return (NavMesh.CalculatePath(transform.position, target.position, int.MaxValue, path));
+        bool result =  (NavMesh.CalculatePath(transform.position, target.position, int.MaxValue, path));
+
+        return path.status == NavMeshPathStatus.PathComplete;
     }
 
     private void Awake()
@@ -19,22 +21,22 @@ public class Region : MonoBehaviour
      path = new NavMeshPath();
      RaycastHit hit;
      Physics.Raycast(new Ray(transform.position, Vector3.down), out hit);
-     transform.position = hit.point;
+     transform.position = hit.point+Vector3.up*0.05f;
     }
 
-    private bool HasDoor(Door door)
+    private bool HasDoor(DoorController _doorController)
     {
-        return this == door.region0 || this == door.region1;
+        return this == _doorController.region0 || this == _doorController.region1;
     }
 
     // Use this for initialization
 	void Start () {
-        doors = new List<Door>();
+        doors = new List<DoorController>();
 
 
 
 
-	    foreach (var go in GameObject.FindObjectsOfType<Door>())
+	    foreach (var go in GameObject.FindObjectsOfType<DoorController>())
 	    {
 	        if (this.HasDoor(go))
 	        {
