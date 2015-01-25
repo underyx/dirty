@@ -8,6 +8,10 @@ public class DropTarget : MonoBehaviour
 {
     public string dropType = "key";
 
-    public virtual void Drop(Collider dragObject) {}
-    
+    public bool Drop(Collider dragObject)
+    {
+		Destroy (dragObject.gameObject);
+		Destroy (this.gameObject);
+		return true;
+    }
 }

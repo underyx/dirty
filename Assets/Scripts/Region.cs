@@ -7,15 +7,29 @@ public class Region : MonoBehaviour
 {
 
     public List<DoorController> doors;
+    public List<Region> neighbors;
+
     private NavMeshPath path;
+
+    public static Region FindRegion(Transform transform)
+    {        
+        foreach (Region reg in GameObject.FindObjectsOfType<Region>())
+        {            
+            if (reg.InRegion(transform))
+            {
+                return reg;
+            }
+        }
+        return null;
+    }
 
     public bool InRegion(Transform target)
     {
-        bool result =  (NavMesh.CalculatePath(transform.position, target.position, int.MaxValue, path));
+        bool result =  (NavMesh.CalculatePath(transform.position, target.position, int.MaxValue & (~(DoorController.PATH_MASK)), path));
 
         return path.status == NavMeshPathStatus.PathComplete;
     }
-
+    
     private void Awake()
     {
      path = new NavMeshPath();
@@ -32,20 +46,28 @@ public class Region : MonoBehaviour
     // Use this for initialization
 	void Start () {
         doors = new List<DoorController>();
-
-
-
-
+        
 	    foreach (var go in GameObject.FindObjectsOfType<DoorController>())
 	    {
 	        if (this.HasDoor(go))
 	        {
 	            doors.Add(go);
 	        }
+
 	    }	    
 	}
-	
-	// Update is called once per frame
+
+    private Region GetDoorTarget(DoorController door)
+    {
+        return door.region0 == this ? door.region1 : door.region0;
+    }
+
+    public DoorController DoorToRegion(Region region)
+    {
+        var door = doors.Find((d) => d.region0 == region || d.region1 == region);
+        return door;
+    }
+    // Update is called once per frame
 	void Update () {
 	
 	}

@@ -7,5 +7,6 @@ using UnityEngine;
 public class Draggable : MonoBehaviour
 {
     public string dropType = "key";
-    public string highlightTypes = "door, door, door";
+    public string highlightTypes = "paca";
+    public bool BeingDragged = false;
 }

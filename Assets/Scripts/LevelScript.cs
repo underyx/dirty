@@ -9,9 +9,12 @@ public class LevelScript : MonoBehaviour {
     private Vector3 screenPoint;
     private Vector3 offset;
 
-	// Use this for initialization
-	void Start () {
+    private Conveyor conveyor;
 
+	// Use this for initialization
+	void Start ()
+	{
+	    conveyor = GameObject.FindObjectOfType<Conveyor>();
 	}
 
 	// Update is called once per frame
@@ -29,14 +32,14 @@ public class LevelScript : MonoBehaviour {
             }
         }
 
-        if (rayhit && originalobject == null)
+		if (rayhit && originalobject == null && hit.collider.CompareTag("Draggable"))
         {
             originalobject = hit.collider;
             originalcolor = originalobject.renderer.material.color;
             originalobject.renderer.material.color = Color.yellow;
         }
 
-        if (rayhit && hit.collider.CompareTag("Draggable") && Input.GetMouseButton(0))
+        if (rayhit && hit.collider.CompareTag("Draggable") && Input.GetMouseButtonDown(0))
         {
             if (grabobject == null)
             {
@@ -51,22 +54,28 @@ public class LevelScript : MonoBehaviour {
                     {
                         string highlightType = highlightTypes[i];
                         if (objects[j].GetComponent<DropTarget>().dropType.Equals(highlightType)) {
-                            objects[j].renderer.material.color = Color.red;
+                            objects[j].renderer.material.color = Color.blue;
                         }
                     }
                 }
 
                 screenPoint = Camera.main.WorldToScreenPoint(grabobject.transform.position);
                 offset = grabobject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-                grabobject.collider.enabled = false;
+				grabobject.collider.enabled = false;
+                grabobject.GetComponent<Draggable>().BeingDragged = true;
             }
 
         }
-        else if (grabobject != null && !Input.GetMouseButton(0))
+        else if (grabobject != null && Input.GetMouseButtonUp(0))
         {
             if (rayhit && hit.collider.CompareTag("DropTarget"))
             {
-                hit.collider.GetComponent<DropTarget>().Drop(grabobject);
+                bool result = hit.collider.GetComponent<DropTarget>().Drop(grabobject);
+
+                if (result)
+                {
+                    conveyor.ItemRemove(grabobject.GetComponent<Draggable>());
+                }
             }
 
             string[] highlightTypes = grabobject.GetComponent<Draggable>().highlightTypes.Split(',');
@@ -79,12 +88,13 @@ public class LevelScript : MonoBehaviour {
                     string highlightType = highlightTypes[i];
                     if (objects[j].GetComponent<DropTarget>().dropType.Equals(highlightType))
                     {
-                        objects[j].renderer.material.color = originalcolor;
+                        objects[j].renderer.material.color = Color.red; // FIXME
                     }
                 }
             }
 
             grabobject.collider.enabled = true;
+            grabobject.GetComponent<Draggable>().BeingDragged = false;
             grabobject = null;
         }
 
